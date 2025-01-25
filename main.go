@@ -8,18 +8,19 @@ import (
 )
 
 func main() {
-	// 加载插件
-	p, err := plugin.Open("./plugin/plugin.so")
-	if err != nil {
-		panic(err)
-	}
-
 	// 加载yaml配置文件
 	configPlugin, err := plugin2.ReadPluginMetadata("./plugin/plugin.yaml")
 	if err != nil {
 		panic(err)
 	}
 	pluginName := configPlugin.Name
+	buildPath := configPlugin.BuildPath
+
+	// 加载插件
+	p, err := plugin.Open(buildPath)
+	if err != nil {
+		panic(err)
+	}
 
 	// 获取插件对象
 	mediaXPlugin, err := plugin2.LookUpSymbol[contract.ProviderInterface](p, pluginName)
