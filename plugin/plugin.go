@@ -12,12 +12,12 @@ type MediaXPlugin struct {
 
 func NewMediaXPlugin() MediaXPlugin {
 	return MediaXPlugin{
-		PluginName: "PluginMediaX-Wechat",
+		PluginName: "PluginMediaXWechat",
 	}
 }
 
 func (p *MediaXPlugin) Initialize(config map[string]interface{}) error {
-	p.PluginName = "PluginMediaX-Wechat"
+	p.PluginName = "PluginMediaXWechat"
 	return nil
 }
 
@@ -34,4 +34,4 @@ func (p *MediaXPlugin) Publish(*contract.PublishRequest, ...interface{}) (*contr
 	}, nil
 }
 
-var PluginMediaX MediaXPlugin = NewMediaXPlugin()
+var PluginMediaXWechat MediaXPlugin = NewMediaXPlugin()

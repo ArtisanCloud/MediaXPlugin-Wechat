@@ -1,4 +1,4 @@
-name: PluginMediaX-Wechat
+name: PluginMediaXWechat
 version: 1.0.0
 type: open
 sourcePath: ./plugin/plugin.go
