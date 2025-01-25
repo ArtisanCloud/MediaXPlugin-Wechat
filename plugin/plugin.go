@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+
 	"github.com/ArtisanCloud/MediaXCore/pkg/plugin/core/contract"
 )
 
@@ -11,12 +12,12 @@ type MediaXPlugin struct {
 
 func NewMediaXPlugin() MediaXPlugin {
 	return MediaXPlugin{
-		PluginName: "MediaXPlugin",
+		PluginName: "MediaXPlugin-Wechat",
 	}
 }
 
 func (p *MediaXPlugin) Initialize(config map[string]interface{}) error {
-	p.PluginName = "MediaXPlugin"
+	p.PluginName = "MediaXPlugin-Wechat"
 	return nil
 }
 
@@ -29,7 +30,7 @@ func (p *MediaXPlugin) Publish(*contract.PublishRequest, ...interface{}) (*contr
 	fmt.Println("Publishing MediaX Plugin")
 	return &contract.PublishResult{
 		Status:  "success",
-		Message: "MediaX Plugin Published Successfully",
+		Message: "MediaX Wechat Plugin Published Successfully",
 	}, nil
 }
 
