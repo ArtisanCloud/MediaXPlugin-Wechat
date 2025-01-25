@@ -14,7 +14,15 @@ func main() {
 		panic(err)
 	}
 
-	mediaXPlugin, err := plugin2.LookUpSymbol[contract.ProviderInterface](p, "PluginMediaX")
+	// 加载yaml配置文件
+	configPlugin, err := plugin2.ReadPluginMetadata("./plugin/plugin.yaml")
+	if err != nil {
+		panic(err)
+	}
+	pluginName := configPlugin.Name
+
+	// 获取插件对象
+	mediaXPlugin, err := plugin2.LookUpSymbol[contract.ProviderInterface](p, pluginName)
 	if err != nil {
 		panic(err)
 	}
