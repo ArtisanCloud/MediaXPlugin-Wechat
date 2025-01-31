@@ -58,4 +58,5 @@ func (p *MediaXPlugin) Publish(ctx *context.Context, arg interface{}) (interface
 	return result, nil
 }
 
+// make sure the variable is exported as the same "Name" as the name in the plugin.yaml file.
 var PluginMediaXWechat MediaXPlugin = NewMediaXPlugin()
