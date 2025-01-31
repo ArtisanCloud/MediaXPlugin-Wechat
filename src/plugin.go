@@ -15,7 +15,7 @@ type MediaXPlugin struct {
 
 func NewMediaXPlugin() MediaXPlugin {
 	return MediaXPlugin{
-		PluginName: "PluginMediaX",
+		PluginName: "PluginMediaXWechat",
 	}
 }
 
@@ -55,4 +55,4 @@ func (p *MediaXPlugin) Publish(ctx *context.Context, arg interface{}) (interface
 	return result, nil
 }
 
-var PluginMediaX MediaXPlugin = NewMediaXPlugin()
+var PluginMediaXWechat MediaXPlugin = NewMediaXPlugin()
