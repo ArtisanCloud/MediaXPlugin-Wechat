@@ -47,6 +47,9 @@ func (p *MediaXPlugin) Publish(ctx *context.Context, arg interface{}) (interface
 	}
 	fmt.Printf("Publishing %s plugin with request: %+s\n", p.PluginName, req.Content)
 
+	// do what you like here with the request and return a response
+	// ...
+
 	// prepare response data
 	result := &contract2.PublishResponse{}
 	result.Code = 0
