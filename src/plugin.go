@@ -25,10 +25,9 @@ func (p *MediaXPlugin) Initialize(ctx *context.Context, arg interface{}) error {
 	c, ok := arg.(*config.PluginConfig)
 	if !ok {
 		argType := reflect.TypeOf(arg)
-		return fmt.Errorf("invalid argument type %s for PluginMediaX arg: *config.PluginConfig", argType.String())
+		return fmt.Errorf("initializing %s invalid argument type %s for arg: *config.PluginConfig", p.PluginName, argType.String())
 	}
 
-	p.PluginName = "PluginMediaX"
 	fmt.Printf("Initializing %s plugin with config base uri: %+s\n", p.PluginName, c.BaseUri)
 
 	return nil

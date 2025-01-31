@@ -8,7 +8,7 @@ type HTTPConfig struct {
 type PluginConfig struct {
 	HTTPConfig
 	AppId     string `json:"appId,omitempty"`
-	AppScret  string `json:"appScret,omitempty"`
+	AppSecret string `json:"appSecret,omitempty"`
 	HttpDebug bool   `json:"httpDebug,omitempty"`
 	Debug     bool   `json:"debug,omitempty"`
 }
