@@ -33,6 +33,3 @@ Thumbs.db
 
 # Go modules
 go.sum
-
-# config
-plugin/plugin.yaml
