@@ -4,10 +4,8 @@ import (
 	"context"
 	"fmt"
 	"github.com/ArtisanCloud/MediaXCore/pkg/logger"
+	"github.com/ArtisanCloud/MediaXCore/pkg/plugin/core/contract"
 	"reflect"
-
-	contract2 "github.com/ArtisanCloud/MediaXPlugin-Wechat/plugin/contract"
-	"github.com/ArtisanCloud/MediaXPlugin-Wechat/plugin/contract/config"
 )
 
 type MediaXPlugin struct {
@@ -24,7 +22,7 @@ func NewMediaXPlugin() MediaXPlugin {
 func (p *MediaXPlugin) Initialize(ctx *context.Context, arg interface{}) error {
 
 	// parse arg to contract config.PluginConfig firstly
-	c, ok := arg.(*config.PluginConfig)
+	c, ok := arg.(*contract.PluginConfig)
 	if !ok {
 		argType := reflect.TypeOf(arg)
 		return fmt.Errorf("initializing %s invalid argument type %s for arg: *config.PluginConfig", p.PluginName, argType.String())
@@ -44,7 +42,7 @@ func (p *MediaXPlugin) Name(ctx *context.Context) string {
 func (p *MediaXPlugin) Publish(ctx *context.Context, arg interface{}) (interface{}, error) {
 
 	// parse arg to contract contract2.PublishRequest firstly
-	req, ok := arg.(*contract2.PublishRequest)
+	req, ok := arg.(*contract.PublishRequest)
 	if !ok {
 		argType := reflect.TypeOf(arg)
 		return nil, fmt.Errorf("invalid argument type %s for PluginMediaX arg: *contract.PublishRequest", argType.String())
@@ -55,7 +53,7 @@ func (p *MediaXPlugin) Publish(ctx *context.Context, arg interface{}) (interface
 	// ...
 
 	// prepare response data
-	result := &contract2.PublishResponse{}
+	result := &contract.PublishResponse{}
 	result.Code = 0
 	result.Msg = "MediaX Plugin Published Successfully"
 

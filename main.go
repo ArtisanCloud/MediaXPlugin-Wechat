@@ -4,18 +4,16 @@ import (
 	"context"
 	"github.com/ArtisanCloud/MediaXCore/pkg/logger"
 	"github.com/ArtisanCloud/MediaXCore/pkg/logger/config"
-	config2 "github.com/ArtisanCloud/MediaXPlugin-Wechat/plugin/contract/config"
 	"plugin"
 
 	plugin2 "github.com/ArtisanCloud/MediaXCore/pkg/plugin"
 	"github.com/ArtisanCloud/MediaXCore/pkg/plugin/core/contract"
-	contract2 "github.com/ArtisanCloud/MediaXPlugin-Wechat/plugin/contract"
 )
 
 func main() {
 
 	ctx := context.Background()
-	configPlugin := &config2.PluginConfig{
+	configPlugin := &contract.PluginConfig{
 		LogConfig: config.LogConfig{
 			Level:         "debug",
 			Console:       true,
@@ -61,17 +59,17 @@ func main() {
 	}
 
 	// 获取插件名称
-	log.InfoF("plugin loaded name :%s \n", mediaXPlugin.Name(&ctx))
+	log.InfoF("plugin loaded name :%s", mediaXPlugin.Name(&ctx))
 
 	// 插件发布内容
-	resObj, err := mediaXPlugin.Publish(&ctx, &contract2.PublishRequest{
+	resObj, err := mediaXPlugin.Publish(&ctx, &contract.PublishRequest{
 		Content: "Hello, MediaX Plugin!",
 	})
 
 	if err != nil {
 		panic(err)
 	}
-	if obj := resObj.(*contract2.PublishResponse); obj.Code == 0 {
+	if obj := resObj.(*contract.PublishResponse); obj.Code == 0 {
 		log.Info("Publishing MediaX Plugin")
 	} else {
 		log.Info("Failed to publish MediaX Plugin")
