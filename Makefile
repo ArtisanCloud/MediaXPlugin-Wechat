@@ -1,13 +1,13 @@
-plugin.all.build: plugin.pluginA.build plugin.pluginB.build
+plugin.all.build: plugin.officialAccount.build plugin.moments.build
 
-.PHONY: plugin.pluginA.build
-plugin.pluginA.build:
-	@echo "正在构建pluginA插件..."
-	go build -o plugins/pluginA.so -buildmode=plugin src/pluginA.go
-	@echo "pluginA插件构建完成"
+.PHONY: plugin.officialAccount.build
+plugin.officialAccount.build:
+	@echo "正在构建officialAccount插件..."
+	go build -o plugins/officialAccount.so -buildmode=plugin src/officialAccount.go
+	@echo "officialAccount插件构建完成"
 
-.PHONY: plugin.pluginB.build
-plugin.pluginB.build:
-	@echo "正在构建pluginB插件..."
-	go build -o plugins/pluginB.so -buildmode=plugin src/pluginB.go
-	@echo "pluginB插件构建完成"
+.PHONY: plugin.moments.build
+plugin.moments.build:
+	@echo "正在构建moments插件..."
+	go build -o plugins/moments.so -buildmode=plugin src/moments.go
+	@echo "moments插件构建完成"

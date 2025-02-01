@@ -1,13 +1,13 @@
-name: PluginMediaX
+name: MediaXPluginWechat
 version: 1.0.0
 type: open
 plugins:
-  - name: PluginMediaXA
-    sourcePath: ./src/pluginA.go
-    buildPath: ./plugins/pluginA.so
+  - name: WechatMoment
+    sourcePath: ./src/moments.go
+    buildPath: ./plugins/moments.so
     config: {}
 
-  - name: PluginMediaXB
-    sourcePath: ./src/pluginB.go
-    buildPath: ./plugins/pluginB.so
+  - name: WechatOfficialAccount
+    sourcePath: ./src/officialAccount.go
+    buildPath: ./plugins/officialAccount.so
     config: {}
