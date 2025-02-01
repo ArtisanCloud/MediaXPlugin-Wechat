@@ -2,7 +2,9 @@ package main
 
 import (
 	"context"
-	"fmt"
+	"github.com/ArtisanCloud/MediaXCore/pkg/logger"
+	"github.com/ArtisanCloud/MediaXCore/pkg/logger/config"
+	config2 "github.com/ArtisanCloud/MediaXPlugin/plugin/contract/config"
 	"plugin"
 
 	plugin2 "github.com/ArtisanCloud/MediaXCore/pkg/plugin"
@@ -11,15 +13,35 @@ import (
 )
 
 func main() {
+
+	ctx := context.Background()
+	configPlugin := &config2.PluginConfig{
+		LogConfig: config.LogConfig{
+			Level:         "debug",
+			Console:       true,
+			UseJsonFormat: true,
+			File: config.FileConfig{
+				Enable: true,
+				//InfoFilePath:  "./logs/info.log",
+				//ErrorFilePath: "./logs/error.log",
+			},
+			//Loki: config.LokiConfig{},
+			HttpDebug: true,
+			Debug:     true,
+		},
+	}
+
+	log := logger.GetLogger(&configPlugin.LogConfig)
+
 	// 加载yaml配置文件
-	configPlugin, err := plugin2.ReadPluginMetadata("./plugin/plugin.yaml")
+	configPluginMetadata, err := plugin2.ReadPluginMetadata("./plugin/plugin.yaml")
 	if err != nil {
 		panic(err)
 	}
-	pluginName := configPlugin.Name
-	buildPath := configPlugin.BuildPath
+	pluginName := configPluginMetadata.Name
+	buildPath := configPluginMetadata.BuildPath
 
-	// 加载插件
+	// 加载插件hgnba        pki0ujhbvg cvi987t6re34578765o766789
 	p, err := plugin.Open(buildPath)
 	if err != nil {
 		panic(err)
@@ -32,9 +54,14 @@ func main() {
 	}
 	mediaXPlugin := *obj
 
+	// 初始化plugin
+	err = mediaXPlugin.Initialize(&ctx, configPlugin)
+	if err != nil {
+		panic(err)
+	}
+
 	// 获取插件名称
-	ctx := context.Background()
-	fmt.Printf("plugin loaded name :%s \n", mediaXPlugin.Name(&ctx))
+	log.InfoF("plugin loaded name :%s \n", mediaXPlugin.Name(&ctx))
 
 	// 插件发布内容
 	resObj, err := mediaXPlugin.Publish(&ctx, &contract2.PublishRequest{
@@ -45,9 +72,9 @@ func main() {
 		panic(err)
 	}
 	if obj := resObj.(*contract2.PublishResponse); obj.Code == 0 {
-		fmt.Println("Publishing MediaX Plugin")
+		log.Info("Publishing MediaX Plugin")
 	} else {
-		fmt.Println("Failed to publish MediaX Plugin")
+		log.Info("Failed to publish MediaX Plugin")
 	}
 
 }
