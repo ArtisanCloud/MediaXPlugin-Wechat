@@ -6,8 +6,8 @@ import (
 	"github.com/ArtisanCloud/MediaXCore/pkg/logger"
 	"reflect"
 
-	contract2 "github.com/ArtisanCloud/MediaXPlugin/plugin/contract"
-	"github.com/ArtisanCloud/MediaXPlugin/plugin/contract/config"
+	contract2 "github.com/ArtisanCloud/MediaXPlugin-Wechat/plugin/contract"
+	"github.com/ArtisanCloud/MediaXPlugin-Wechat/plugin/contract/config"
 )
 
 type MediaXPlugin struct {

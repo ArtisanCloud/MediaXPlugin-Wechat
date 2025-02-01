@@ -1,4 +1,4 @@
-module github.com/ArtisanCloud/MediaXPlugin
+module github.com/ArtisanCloud/MediaXPlugin-Wechat
 
 go 1.18
 

@@ -4,12 +4,12 @@ import (
 	"context"
 	"github.com/ArtisanCloud/MediaXCore/pkg/logger"
 	"github.com/ArtisanCloud/MediaXCore/pkg/logger/config"
-	config2 "github.com/ArtisanCloud/MediaXPlugin/plugin/contract/config"
+	config2 "github.com/ArtisanCloud/MediaXPlugin-Wechat/plugin/contract/config"
 	"plugin"
 
 	plugin2 "github.com/ArtisanCloud/MediaXCore/pkg/plugin"
 	"github.com/ArtisanCloud/MediaXCore/pkg/plugin/core/contract"
-	contract2 "github.com/ArtisanCloud/MediaXPlugin/plugin/contract"
+	contract2 "github.com/ArtisanCloud/MediaXPlugin-Wechat/plugin/contract"
 )
 
 func main() {
