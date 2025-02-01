@@ -8,18 +8,18 @@ import (
 	"reflect"
 )
 
-type MediaXPlugin struct {
+type MediaXPluginB struct {
 	PluginName string
 	Logger     *logger.Logger
 }
 
-func NewMediaXPlugin() MediaXPlugin {
-	return MediaXPlugin{
-		PluginName: "PluginMediaXWechat",
+func NewMediaXPluginB() MediaXPluginB {
+	return MediaXPluginB{
+		PluginName: "PluginMediaX",
 	}
 }
 
-func (p *MediaXPlugin) Initialize(ctx *context.Context, arg interface{}) error {
+func (p *MediaXPluginB) Initialize(ctx *context.Context, arg interface{}) error {
 
 	// parse arg to contract config.PluginConfig firstly
 	c, ok := arg.(*contract.PluginConfig)
@@ -35,11 +35,11 @@ func (p *MediaXPlugin) Initialize(ctx *context.Context, arg interface{}) error {
 	return nil
 }
 
-func (p *MediaXPlugin) Name(ctx *context.Context) string {
+func (p *MediaXPluginB) Name(ctx *context.Context) string {
 	return p.PluginName
 }
 
-func (p *MediaXPlugin) Publish(ctx *context.Context, arg interface{}) (interface{}, error) {
+func (p *MediaXPluginB) Publish(ctx *context.Context, arg interface{}) (interface{}, error) {
 
 	// parse arg to contract contract2.PublishRequest firstly
 	req, ok := arg.(*contract.PublishRequest)
@@ -55,10 +55,10 @@ func (p *MediaXPlugin) Publish(ctx *context.Context, arg interface{}) (interface
 	// prepare response data
 	result := &contract.PublishResponse{}
 	result.Code = 0
-	result.Msg = "MediaX Plugin Published Successfully"
+	result.Msg = p.PluginName + " Published Successfully"
 
 	return result, nil
 }
 
 // make sure the variable is exported as the same "Name" as the name in the plugin.yaml file.
-var PluginMediaXWechat MediaXPlugin = NewMediaXPlugin()
+var PluginMediaXB MediaXPluginB = NewMediaXPluginB()

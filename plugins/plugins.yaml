@@ -1,0 +1,13 @@
+name: PluginMediaX
+version: 1.0.0
+type: open
+plugins:
+  - name: PluginMediaXA
+    sourcePath: ./src/pluginA.go
+    buildPath: ./plugins/pluginA.so
+    config: {}
+
+  - name: PluginMediaXB
+    sourcePath: ./src/pluginB.go
+    buildPath: ./plugins/pluginB.so
+    config: {}

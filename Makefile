@@ -1,6 +1,13 @@
-# 单独构建插件文件，传入模块名
-.PHONY: plugin.build
-plugin.build:
-	@echo "正在构建插件..."
-	go build -o plugin/plugin.so -buildmode=plugin src/plugin.go
-	@echo "插件构建完成"
+plugin.all.build: plugin.pluginA.build plugin.pluginB.build
+
+.PHONY: plugin.pluginA.build
+plugin.pluginA.build:
+	@echo "正在构建pluginA插件..."
+	go build -o plugins/pluginA.so -buildmode=plugin src/pluginA.go
+	@echo "pluginA插件构建完成"
+
+.PHONY: plugin.pluginB.build
+plugin.pluginB.build:
+	@echo "正在构建pluginB插件..."
+	go build -o plugins/pluginB.so -buildmode=plugin src/pluginB.go
+	@echo "pluginB插件构建完成"

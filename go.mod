@@ -2,7 +2,7 @@ module github.com/ArtisanCloud/MediaXPlugin-Wechat
 
 go 1.18
 
-require github.com/ArtisanCloud/MediaXCore v0.0.0-20250201094827-38ed39ee85fa
+require github.com/ArtisanCloud/MediaXCore v0.0.0-20250201134440-8ccfc1ba674e
 
 require (
 	go.uber.org/multierr v1.11.0 // indirect
