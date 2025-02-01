@@ -4,7 +4,7 @@ go 1.18
 
 replace github.com/ArtisanCloud/MediaXCore => ../MediaXCore
 
-require github.com/ArtisanCloud/MediaXCore v0.0.0-20250131082101-43665fdd7e8e
+require github.com/ArtisanCloud/MediaXCore v0.0.0-20250201035854-56b1a90713be
 
 require (
 	go.uber.org/multierr v1.11.0 // indirect
