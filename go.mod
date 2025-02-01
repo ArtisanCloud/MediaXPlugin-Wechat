@@ -2,8 +2,6 @@ module github.com/ArtisanCloud/MediaXPlugin
 
 go 1.18
 
-replace github.com/ArtisanCloud/MediaXCore => ../MediaXCore
-
 require github.com/ArtisanCloud/MediaXCore v0.0.0-20250201035854-56b1a90713be
 
 require (
