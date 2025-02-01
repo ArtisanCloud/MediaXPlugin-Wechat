@@ -61,4 +61,4 @@ func (p *MediaXPluginWechatOfficialAccount) Publish(ctx *context.Context, arg in
 }
 
 // make sure the variable is exported as the same "Name" as the name in the plugin.yaml file.
-var PluginMediaXWechatOfficialAccount MediaXPluginWechatOfficialAccount = NewMediaXPluginWechatOfficialAccount()
+var WechatOfficialAccount MediaXPluginWechatOfficialAccount = NewMediaXPluginWechatOfficialAccount()

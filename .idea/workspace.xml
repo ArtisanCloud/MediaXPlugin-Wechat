@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c423037-1539-4713-bd5b-5ec5cdd235d5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/moments.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/officialAccount.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/make_plugin_pluginA_build.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin/plugin.yaml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/plugins/plugins.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/plugins.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/moments.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/moments.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/officialAccount.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/officialAccount.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,9 +55,23 @@
     </key>
   </component>
   <component name="RunManager" selected="Go Build.go build main.go">
+    <configuration name="make plugin.moments.build" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile">
+      <makefile filename="$PROJECT_DIR$/Makefile" target="plugin.moments.build" workingDirectory="$PROJECT_DIR$" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
+    <configuration name="make plugin.officialAccount.build" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile">
+      <makefile filename="$PROJECT_DIR$/Makefile" target="plugin.officialAccount.build" workingDirectory="$PROJECT_DIR$" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Go Build.go build main.go" />
       <item itemvalue="Makefile Target.make plugin.all.build" />
+      <item itemvalue="Makefile Target.make plugin.moments.build" />
+      <item itemvalue="Makefile Target.make plugin.officialAccount.build" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
