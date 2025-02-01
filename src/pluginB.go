@@ -15,7 +15,7 @@ type MediaXPluginB struct {
 
 func NewMediaXPluginB() MediaXPluginB {
 	return MediaXPluginB{
-		PluginName: "PluginMediaX",
+		PluginName: "PluginMediaXB",
 	}
 }
 
