@@ -2,7 +2,7 @@ name: MediaXPluginWechat
 version: 1.0.0
 type: open
 plugins:
-  - name: WechatMoments
+  - name: WechatChannel
     sourcePath: ./src/channel.go
     buildPath: ./plugins/channel.so
     config: {}
