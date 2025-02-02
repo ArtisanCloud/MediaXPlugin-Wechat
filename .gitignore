@@ -2,7 +2,9 @@
 *.exe
 *.exe~
 *.dll
-*.so
+plugins/pluginA.so
+plugins/pluginB.so
+# *.so
 *.dylib
 *.a
 *.out
