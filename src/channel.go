@@ -8,18 +8,18 @@ import (
 	"reflect"
 )
 
-type MediaXPluginWechatMoment struct {
+type MediaXPluginWechatChannel struct {
 	PluginName string
 	Logger     *logger.Logger
 }
 
-func NewMediaXPluginWechatMoment() MediaXPluginWechatMoment {
-	return MediaXPluginWechatMoment{
-		PluginName: string(contract.WechatMoments),
+func NewMediaXPluginWechatChannel() MediaXPluginWechatChannel {
+	return MediaXPluginWechatChannel{
+		PluginName: string(contract.WechatChannel),
 	}
 }
 
-func (p *MediaXPluginWechatMoment) Initialize(ctx *context.Context, arg interface{}) error {
+func (p *MediaXPluginWechatChannel) Initialize(ctx *context.Context, arg interface{}) error {
 
 	// parse arg to contract config.PluginConfig firstly
 	c, ok := arg.(*contract.PluginConfig)
@@ -35,11 +35,11 @@ func (p *MediaXPluginWechatMoment) Initialize(ctx *context.Context, arg interfac
 	return nil
 }
 
-func (p *MediaXPluginWechatMoment) Name(ctx *context.Context) string {
+func (p *MediaXPluginWechatChannel) Name(ctx *context.Context) string {
 	return p.PluginName
 }
 
-func (p *MediaXPluginWechatMoment) Publish(ctx *context.Context, arg interface{}) (interface{}, error) {
+func (p *MediaXPluginWechatChannel) Publish(ctx *context.Context, arg interface{}) (interface{}, error) {
 
 	// parse arg to contract contract2.PublishRequest firstly
 	req, ok := arg.(*contract.PublishRequest)
@@ -61,4 +61,4 @@ func (p *MediaXPluginWechatMoment) Publish(ctx *context.Context, arg interface{}
 }
 
 // make sure the variable is exported as the same "Name" as the name in the plugin.yaml file.
-var WechatMoments MediaXPluginWechatMoment = NewMediaXPluginWechatMoment()
+var WechatChannel MediaXPluginWechatChannel = NewMediaXPluginWechatChannel()

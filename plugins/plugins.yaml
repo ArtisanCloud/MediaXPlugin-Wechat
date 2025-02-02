@@ -3,8 +3,8 @@ version: 1.0.0
 type: open
 plugins:
   - name: WechatMoments
-    sourcePath: ./src/moments.go
-    buildPath: ./plugins/moments.so
+    sourcePath: ./src/channel.go
+    buildPath: ./plugins/channel.so
     config: {}
 
   - name: WechatOfficialAccount
