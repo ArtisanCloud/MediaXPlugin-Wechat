@@ -32,7 +32,7 @@ func main() {
 	log := logger.GetLogger(&configPlugin.LogConfig)
 
 	// 加载yaml配置文件
-	configPluginsMetadata, err := plugin2.ReadPluginMetadata("./plugins/plugins.yaml")
+	configPluginsMetadata, err := plugin2.ReadPluginBundleMetadata("./plugins/plugins.yaml")
 	if err != nil {
 		panic(err)
 	}
